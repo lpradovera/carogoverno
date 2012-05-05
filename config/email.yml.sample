@@ -1,0 +1,14 @@
+development:
+  :address: mail.carogoverno.it
+  :port: 587 
+  :authentication: plain
+  :user_name: mailer@carogoverno.it
+  :password: PASSWORD
+  :enable_starttls_auto: true
+production:
+  :address: mail.carogoverno.it
+  :port: 587 
+  :authentication: plain
+  :user_name: mailer@carogoverno.it
+  :password: PASSWORD
+  :enable_starttls_auto: true
