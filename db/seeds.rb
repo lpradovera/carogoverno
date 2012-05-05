@@ -10,3 +10,7 @@ user = User.create! :name => 'First User', :email => 'user@example.com', :passwo
 puts 'New user created: ' << user.name
 user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
 puts 'New user created: ' << user2.name
+
+puts 'ADDING A POST AND A VOTE'
+post = Post.create! :user_id => user.id, :posted_at => Time.now.utc, :body => "Libri di Ruby per tutti, e vietare il PHP!"
+vote = Vote.create! :user_id => user.id, :post_id => post.id, :voted_at => Time.now.utc, :like => true
