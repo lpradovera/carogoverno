@@ -1,0 +1,18 @@
+%h1 Tutti i post
+- @posts.each do |p|
+  .post
+    %p= p.body
+    %p
+      Punteggio:
+      = p.score || "0"
+      Positivi:
+      = p.plus
+      Negativi
+      = p.minus
+    %p
+      = link_to "+1", voteup_post_path(p), :method => :post
+      = link_to "-1", votedown_post_path(p), :method => :post
+    %p
+      = p.has_vote_from_user(current_user.id)
+    %p
+      = p.user_can_vote_for(current_user.id)

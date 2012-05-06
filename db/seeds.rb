@@ -13,4 +13,4 @@ puts 'New user created: ' << user2.name
 
 puts 'ADDING A POST AND A VOTE'
 post = Post.create! :user_id => user.id, :posted_at => Time.now.utc, :body => "Libri di Ruby per tutti, e vietare il PHP!"
-vote = Vote.create! :user_id => user.id, :post_id => post.id, :voted_at => Time.now.utc, :like => true
+vote = Vote.create! :user_id => user.id, :post_id => post.id, :voted_at => Time.now.utc, :vote => 1
