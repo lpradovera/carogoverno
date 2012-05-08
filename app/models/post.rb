@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :body, :posted_at, :user_id
 
   scope :order_by_score, lambda {|direction| 
-    joins("LEFT JOIN votes ON votes.post_id = posts.id").group("votes.post_id").select("posts.*, sum(votes.vote) AS score").order("score #{direction}")
+    joins("LEFT JOIN votes ON votes.post_id = posts.id").group("posts.id").select("posts.*, sum(votes.vote) AS score").order("score #{direction}")
   }
 
   def plus

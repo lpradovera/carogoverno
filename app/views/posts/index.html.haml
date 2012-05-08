@@ -1,5 +1,6 @@
 %h1 Tutti i post
 - @posts.each do |p|
+  %hr
   .post
     %p= p.body
     %p
@@ -13,6 +14,8 @@
       = link_to "+1", voteup_post_path(p), :method => :post
       = link_to "-1", votedown_post_path(p), :method => :post
     %p
-      = p.has_vote_from_user(current_user.id)
+      Ha voto da utente:
+      = p.has_vote_from_user(current_user.id) if current_user
     %p
-      = p.user_can_vote_for(current_user.id)
+      Utente puo' votare
+      = p.user_can_vote_for(current_user.id) if current_user
