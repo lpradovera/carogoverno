@@ -21,11 +21,12 @@
       %small
         altro testo qui
   .row
-    - @top_posts.each do |p|
+    - @last_posts.each do |p|
       .span3
         %h3.gravatar
           %img{src: p.user.gravatar_path, title: p.user.name}
           = p.user.name
+          = p.has_vote_from_user(current_user.id) if current_user
         %p
           = p.body
         = render :partial => "shared/postbuttons", :object => p

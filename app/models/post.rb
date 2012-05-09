@@ -24,4 +24,16 @@ class Post < ActiveRecord::Base
   def user_can_vote_for(for_user_id)
     user_id != for_user_id && has_vote_from_user(for_user_id).nil?
   end
+
+  def add_vote(vote, user_id)
+    if user_can_vote(user_id)
+      vote = Vote.new({
+        post_id: id,
+        user_id: user_id,
+        vote: vote > 0 ? 1 : -1
+      }).save
+      return true
+    end
+    return false
+  end
 end

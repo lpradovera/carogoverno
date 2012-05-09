@@ -1,21 +1,10 @@
-%h1 Tutti i post
-- @posts.each do |p|
-  %hr
-  .post
-    %p= p.body
-    %p
-      Punteggio:
-      = p.score || "0"
-      Positivi:
-      = p.plus
-      Negativi
-      = p.minus
-    %p
-      = link_to "+1", voteup_post_path(p), :method => :post
-      = link_to "-1", votedown_post_path(p), :method => :post
-    %p
-      Ha voto da utente:
-      = p.has_vote_from_user(current_user.id) if current_user
-    %p
-      Utente puo' votare
-      = p.user_can_vote_for(current_user.id) if current_user
+%section.well.container
+  .row
+    - @posts.each do |p|
+      .span3
+        %h3.gravatar
+          %img{src: p.user.gravatar_path, title: p.user.name}
+          = p.user.name
+        %p
+          = p.body
+        = render :partial => "shared/postbuttons", :object => p
