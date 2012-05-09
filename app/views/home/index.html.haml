@@ -9,8 +9,8 @@
         .span4
           .well
             %h3.gravatar
-              %img(src='http://www.gravatar.com/avatar/ae9a26fc2fbbc4fb8394b4d5721bdb58.png' title="xKraty")
-              xKraty
+              %img{src: p.user.gravatar_path, title: p.user.name}
+              = p.user.name
             %p
               = p.body
             = render :partial => "shared/postbuttons", :object => p
@@ -24,8 +24,8 @@
     - @top_posts.each do |p|
       .span3
         %h3.gravatar
-          %img(src='http://www.gravatar.com/avatar/ae9a26fc2fbbc4fb8394b4d5721bdb58.png' title="xKraty")
-          xKraty
+          %img{src: p.user.gravatar_path, title: p.user.name}
+          = p.user.name
         %p
           = p.body
         = render :partial => "shared/postbuttons", :object => p

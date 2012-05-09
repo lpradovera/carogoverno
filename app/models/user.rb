@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :votes
   # attr_accessible :title, :body
+  
+  def gravatar
+    Digest::MD5.hexdigest(email)
+  end
+
+  def gravatar_path
+    "http://www.gravatar.com/avatar/#{gravatar}.png"
+  end
 end
