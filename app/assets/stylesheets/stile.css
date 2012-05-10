@@ -1,6 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Satisfy);
 body { margin: 75px 0 40px 0; }
 .navbar .nav > li > a { height: 29px; padding-top: 15px; }
 .navbar .btn-group { padding-top: 12px; }
+a.brand { font-family: Satisfy; }
 .row .well  { overflow: auto; }
-h3.gravatar { border-bottom: 1px solid #fff; }
+h3.gravatar { border-bottom: 1px solid #fff; padding: 5px; font-size: 14px; }
 h3.gravatar img { border: 5px solid #fff; border-radius: 5px; width: 40px; height: 40px; }
+.post { box-shadow: 0 0 5px #888; margin-bottom: 10px; }
+.post > p { height: 125px; padding: 5px; font-family: Satisfy; text-align: justify; }
+.cg-buttons { padding: 5px; }

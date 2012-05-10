@@ -4,29 +4,33 @@
       Top 3
       %small
         altro testo qui
-    .row
-      - @top_posts.each do |p|
-        .span4
-          .well
+  .row
+    - @top_posts.each do |p|
+      .span4
+        .well.post
+          %h3.gravatar
+            %img{src: p.user.gravatar_path, title: p.user.name}
+            = p.user.name
+          %p
+            = p.body
+          = render :partial => "shared/postbuttons", :object => p
+%section.container.lastposts
+  %h1.well
+    Ultimi Post
+    %small
+      altro testo qui
+  .row-fluid
+    .well
+      .clearfix
+        - @last_posts.each_with_index do |p, i|
+          - if i % 4 == 0
+            </div>
+            <div class="clearfix">
+          .span3.post
             %h3.gravatar
               %img{src: p.user.gravatar_path, title: p.user.name}
               = p.user.name
+              = p.has_vote_from_user(current_user.id) if current_user
             %p
               = p.body
             = render :partial => "shared/postbuttons", :object => p
-%section.container.lastposts.well
-  .page-header
-    %h1
-      Ultimi Post
-      %small
-        altro testo qui
-  .row
-    - @last_posts.each do |p|
-      .span3
-        %h3.gravatar
-          %img{src: p.user.gravatar_path, title: p.user.name}
-          = p.user.name
-          = p.has_vote_from_user(current_user.id) if current_user
-        %p
-          = p.body
-        = render :partial => "shared/postbuttons", :object => p

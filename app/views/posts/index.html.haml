@@ -1,10 +1,16 @@
-%section.well.container
-  .row
-    - @posts.each do |p|
-      .span3
-        %h3.gravatar
-          %img{src: p.user.gravatar_path, title: p.user.name}
-          = p.user.name
-        %p
-          = p.body
-        = render :partial => "shared/postbuttons", :object => p
+%section.container
+  .row-fluid
+    .well
+      .clearfix
+        - @posts.each_with_index do |p, i|
+          - if i % 4 == 0
+            </div>
+            <div class="clearfix">
+          .span3.post
+            %h3.gravatar
+              %img{src: p.user.gravatar_path, title: p.user.name}
+              = p.user.name
+              = p.has_vote_from_user(current_user.id) if current_user
+            %p
+              = p.body
+            = render :partial => "shared/postbuttons", :object => p
