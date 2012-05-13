@@ -4,10 +4,10 @@ $(document).ajaxSend(function(e, xhr, options) {
 });
 
 $.ajaxSetup({
-error: function(xhr, status, err) {
-if (xhr.status == 401)
-window.location.href = '/users/sign_in';
-}
+  error: function(xhr, status, err) {
+    if (xhr.status == 401)
+  window.location.href = '/users/sign_in';
+  }
 });
 
 $(function() {
@@ -21,9 +21,25 @@ $(function() {
     });
     e.preventDefault();
   });
+
+  $('.btn-report').click(function(e) {
+    var url = $(this).attr('href') + '.json';
+    $.ajax({
+      type: 'POST',
+      url: url,
+      data: '',
+      success: reportSuccess
+    });
+    e.preventDefault();
+  });
 });
 
 function voteSuccess(data, status, jqxhr)
 {
 
+}
+
+function reportSuccess(data, status, jqxhr)
+{
+  alert("Post segnalato con successo!");
 }
