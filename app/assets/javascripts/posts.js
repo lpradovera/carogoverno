@@ -11,7 +11,8 @@ window.location.href = '/users/sign_in';
 });
 
 $(function() {
-  $('.btn-voteup').click(function(e) {
+  $('a[rel="tooltip"]').tooltip();
+  $('.btn-voteup, .btn-votedown').live('click',function(e) {
     var url = $(this).attr('href') + '.json';
     $.ajax({
       type: 'POST',
@@ -20,6 +21,20 @@ $(function() {
       success: voteSuccess
     });
     e.preventDefault();
+  });
+  $('.detail').click(function(e) {
+    e.preventDefault();
+    var href = $(e.target).attr('href');
+    if (href.indexOf('#') == 0) {
+      $(href).modal('open');
+    } else {
+      $.get(href, function(data) {
+        var modal = '<div class="modal fade"><div class="modal-header"><button class="close" data-dismiss="modal">&times;</button><h3>Dettaglio Proposta</h3></div>';
+        modal += '<div class="modal-body"><p>'+data+'</p></div>';
+        modal += '<div class="modal-footer"> <a href="#" class="btn" data-dismiss="modal">Chiudi</a></div>';
+        $(modal).modal();
+      });
+    }
   });
 });
 

@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.find_by_id!(params[:id])
 
     respond_to do |format|
-      format.html
+      format.html { render :layout => request.xhr? ? false : true  }
       format.json { render json: @post }
     end
   end
@@ -56,16 +56,8 @@ class PostsController < ApplicationController
 
   def votedown
     @post = Post.find_by_id!(params[:id])
-    if @post.user_can_vote_for(current_user.id)
-      vote = Vote.new({
-        post_id: @post.id,
-        user_id: current_user.id,
-        vote: -1
-      }).save
-      @response = :ok
-    else
-      @response = :ko
-    end
+    @post.add_vote(-1,current_user.id)
+    @response = {plus: @post.plus, minus: @post.minus}
     respond_to do |format|
       format.html
       format.json { render json: @response }

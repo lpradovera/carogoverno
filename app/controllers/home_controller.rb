@@ -3,4 +3,7 @@ class HomeController < ApplicationController
     @top_posts = Post.order_by_score('DESC').take(3)
     @last_posts = Post.order('created_at DESC').limit(8)
   end
+
+  def chisiamo
+  end
 end

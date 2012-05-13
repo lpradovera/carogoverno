@@ -26,7 +26,7 @@ class Post < ActiveRecord::Base
   end
 
   def add_vote(vote, user_id)
-    if user_can_vote(user_id)
+    if user_can_vote_for(user_id)
       vote = Vote.new({
         post_id: id,
         user_id: user_id,

@@ -1,2 +1,4 @@
-%h1 Post
-.post= @post.body
+.post{rel: @post.id}
+  = @post.body
+  %hr
+  = render :partial => "shared/postbuttons", :object => @post

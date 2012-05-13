@@ -27,8 +27,20 @@
             .span12
               = render 'layouts/messages'
               = yield
-    %footer.navbar-fixed-bottom.container
-      %p.pull-right
-        %a(href='#')
-          Torna su
-          %i.icon-chevron-up
+    %footer.navbar-fixed-bottom.navbar-inner
+      .container
+        .pull-left
+          &copy;Copyright 2012 <span class="carogoverno">CaroGoverno.it</span> designed and developed by Luca Pradovera &amp; Christian Campoli - All rights reserved
+        .pull-right
+          .addthis_toolbox.addthis_default_style.addthis_32x32_style
+            %a.addthis_button_facebook
+            %a.addthis_button_twitter
+            %a.addthis_button_email
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fafafcd73d9308e"></script>
+.modal
+  .modal-header
+    %button.close(data-dismiss="modal") &times;
+    %h3 Modal header
+  .modal-body
+  .modal-footer
+  %a.btn(href="#") Chiudi

@@ -1,9 +1,9 @@
 %section.top3
   .page-header
-    %h1
+    %h1.carogoverno
       Top 3
       %small
-        altro testo qui
+        Le proposte pi&ugrave; votate
   .row
     - @top_posts.each do |p|
       .span4
@@ -12,16 +12,18 @@
             %img{src: p.user.gravatar_path, title: p.user.name}
             = p.user.name
           %p
-            = p.body
+            = truncate(p.body, :length => 200)
+            = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'
           = render :partial => "shared/postbuttons", :object => p
 %section.container.lastposts
-  %h1.well
-    Ultimi Post
-    %small
-      altro testo qui
   .row-fluid
     .well
       .clearfix
+        .page-header
+          %h1.carogoverno
+            Ultime Proposte
+            %small
+              Le ultime proposte inserite
         - @last_posts.each_with_index do |p, i|
           - if i % 4 == 0
             </div>
@@ -30,7 +32,7 @@
             %h3.gravatar
               %img{src: p.user.gravatar_path, title: p.user.name}
               = p.user.name
-              = p.has_vote_from_user(current_user.id) if current_user
             %p
-              = p.body
+              = truncate(p.body, :length => 200)
+              = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'
             = render :partial => "shared/postbuttons", :object => p
