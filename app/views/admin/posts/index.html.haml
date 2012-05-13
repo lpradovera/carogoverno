@@ -1,0 +1,17 @@
+%h1 Admin Post
+%table
+  %tr
+    %th ID
+    %th Utente
+    %th Testo
+    %th Reported
+    %th Azioni
+  - @posts.each do |p|
+    %tr
+      %td= p.id
+      %td= p.user.email
+      %td= truncate p.body
+      %td= p.reported
+      %td
+        = link_to "Vedi", "/admin/posts/#{p.id}"
+        = link_to "Elimina", "/admin/posts/#{p.id}/delete", :method => :delete

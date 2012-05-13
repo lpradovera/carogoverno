@@ -1,0 +1,10 @@
+%h1 Vedi Post
+%dl
+  %dt ID
+  %dd= @post.id
+  %dt Autore
+  %dd= @post.user.name
+  %dt Email
+  %dd= @post.user.email
+  %dt Testo
+  %dd= @post.body

@@ -63,4 +63,17 @@ class PostsController < ApplicationController
       format.json { render json: @response }
     end
   end
+
+  def report
+    @post = Post.find_by_id!(params[:id])
+    if @post.reported == 0
+      ReportMailer.report(@post).deliver
+    end
+    @post.reported += 1
+    @post.save
+    respond_to do |format|
+      format.html
+      format.json { render json: :ok }
+    end
+  end
 end
