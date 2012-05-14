@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     @post = Post.new
 
     respond_to do |format|
-      format.html
+      format.html { render :layout => request.xhr? ? false : true  }
       format.json { render json: @post }
     end
   end

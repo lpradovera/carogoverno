@@ -25,11 +25,15 @@ $(function() {
   $('.detail').click(function(e) {
     e.preventDefault();
     var href = $(e.target).attr('href');
+    var title = $(e.target).attr('title');
+    if ( title == 'undefined' ) {
+      title = "Dettaglio Proposta";
+    }
     if (href.indexOf('#') == 0) {
       $(href).modal('open');
     } else {
       $.get(href, function(data) {
-        var modal = '<div class="modal fade"><div class="modal-header"><button class="close" data-dismiss="modal">&times;</button><h3>Dettaglio Proposta</h3></div>';
+        var modal = '<div class="modal fade"><div class="modal-header"><button class="close" data-dismiss="modal">&times;</button><h3>'+title+'</h3></div>';
         modal += '<div class="modal-body"><p>'+data+'</p></div>';
         modal += '<div class="modal-footer"> <a href="#" class="btn" data-dismiss="modal">Chiudi</a></div>';
         $(modal).modal();

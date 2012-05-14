@@ -1,5 +1,6 @@
 .cg-buttons.clearfix
   .btn-group.pull-left
+    -#= @vote = p.has_vote_from_user(current_user.id) if current_user
     %a.btn.btn-success.btn-voteup{href: voteup_post_path(postbuttons), title: "Mi piace", rel: "tooltip"}
       %i.icon-thumbs-up.icon-white
       = postbuttons.plus

@@ -1,4 +1,4 @@
-%section.container
+%section.container.postslist
   .row-fluid
     .well
       .clearfix
@@ -12,5 +12,5 @@
               = p.user.name
               = p.has_vote_from_user(current_user.id) if current_user
             %p
-              = p.body
+              = truncate(p.body, :length => 200)
             = render :partial => "shared/postbuttons", :object => p

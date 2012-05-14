@@ -13,7 +13,8 @@
     = link_to('Aiutaci', '#')
 - if user_signed_in?
   .btn-group.pull-right
-    %a.btn.dropdown-toggle(href='#' data-toggle='dropdown')
+    = link_to('Proponi', new_post_path, :class => 'btn btn-primary detail', :title => 'Nuova Proposta')
+    %a.btn.btn-primary.dropdown-toggle(href='#' data-toggle='dropdown')
       %i.icon-user
       = current_user.name
       %span.caret
@@ -27,4 +28,4 @@
         = link_to('Esci', destroy_user_session_path, :method => 'delete')
 - else
   .btn-group.pull-right
-    = link_to('Accedi', new_user_session_path, :class => 'btn' )
+    = link_to('Accedi', new_user_session_path, :class => 'btn')

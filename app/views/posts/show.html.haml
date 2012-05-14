@@ -1,4 +1,5 @@
 .post{rel: @post.id}
-  = @post.body
-  %hr
-  = render :partial => "shared/postbuttons", :object => @post
+  %p
+    = @post.body
+    %hr
+    = render :partial => "shared/postbuttons", :object => @post
