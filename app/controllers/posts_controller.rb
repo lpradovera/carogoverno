@@ -2,7 +2,14 @@ class PostsController < ApplicationController
   before_filter :check_valid_user, :except => [:index, :show]
 
   def index
-    @posts = Post.order_by_score('DESC').all
+    @sort = params[:sort] || 'score'
+    per_page = 4
+    if @sort == 'score'
+      @posts = Post.paginate(:page => params[:page], :per_page => per_page).order_by_score('DESC').all
+    else
+      @posts = Post.paginate(:page => params[:page], :per_page => per_page).order('posted_at DESC').all
+    end
+
     
     respond_to do |format|
       format.html
@@ -35,7 +42,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to :back, notice: 'Post was successfully created.' }
+        #format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }

@@ -1,4 +1,10 @@
 %section.container.postslist
+  .row
+    = will_paginate @posts, :params => {sort: @sort}
+  .row
+    Ordina 
+    = link_to "per punteggio", posts_path(:sort => 'score')
+    = link_to "per data", posts_path(:sort => 'posted')
   .row-fluid
     .clearfix
       - @posts.each_with_index do |p, i|

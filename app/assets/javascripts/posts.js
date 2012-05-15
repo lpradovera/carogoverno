@@ -50,6 +50,11 @@ $(function() {
     });
     e.preventDefault();
   });
+
+  $.getJSON('http://api.twitter.com/1/statuses/user_timeline/CaroGoverno.json?count=1&callback=?',function(tweet){  
+     tweet = linkify(tweet[0].text);  
+     $("#tweet").html(tweet);  
+  });
 });
 
 function voteSuccess(data, status, jqxhr)
@@ -61,3 +66,17 @@ function reportSuccess(data, status, jqxhr)
 {
   alert("Post segnalato con successo!");
 }
+
+function linkify(string){  
+  string = string.replace(  
+      /((https?\:\/\/)|(www\.))(\S+)(\w{2,4})(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/gi,  
+      function(url){  
+        var full_url = url;  
+        if (!full_url.match('^https?:\/\/')) {  
+          full_url = 'http://' + full_url;  
+        }  
+        return '<a href="' + full_url + '">' + url + '</a>';  
+      }  
+      );  
+  return string;  
+}  

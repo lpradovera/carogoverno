@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :is_admin
   has_many :posts
   has_many :votes
+  validates_length_of :name, :maximum => 15, :message=>"Lunghezza massima %d caratteri"
+  validates_uniqueness_of :name
   # attr_accessible :title, :body
   
   def gravatar
