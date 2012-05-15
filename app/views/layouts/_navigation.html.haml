@@ -10,12 +10,18 @@
   %li
     = link_to('Chi siamo', '/chi-siamo')
   %li
+    = link_to('Il Team', '/il-team')
+  %li
     = link_to('Privacy', '/privacy')
   %li
-    = link_to('Aiutaci', '#')
+    = link_to('Condizioni', '/condizioni-utilizzo')
+  %li
+    = link_to('Aiutaci', '/aiutaci')
 - if user_signed_in?
   .btn-group.pull-right
-    = link_to('Proponi', new_post_path, :class => 'btn btn-primary detail', :title => 'Nuova Proposta')
+    %a.btn.btn-primary.detail{href: new_post_path, title: 'Nuova Proposta'}  
+      %i.icon-leaf
+      &nbsp;Proponi
     %a.btn.btn-primary.dropdown-toggle(href='#' data-toggle='dropdown')
       %i.icon-user
       = current_user.name
@@ -30,4 +36,4 @@
         = link_to('Esci', destroy_user_session_path, :method => 'delete')
 - else
   .btn-group.pull-right
-    = link_to('Accedi', new_user_session_path, :class => 'btn')
+    = link_to('Accedi', new_user_session_path, :class => 'btn btn-primary')

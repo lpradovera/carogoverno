@@ -5,11 +5,10 @@
         - if i % 4 == 0
           </div>
           <div class="clearfix">
-        .span3.post.well
+        .span3.post.well{rel: p.id}
           %h3.gravatar
             %img{src: p.user.gravatar_path, title: p.user.name}
             = p.user.name
-            = p.has_vote_from_user(current_user.id) if current_user
           %p
             = truncate(p.body, :length => 175)
             = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'

@@ -13,12 +13,25 @@ $.ajaxSetup({
 $(function() {
   $('a[rel="tooltip"]').tooltip();
   $('.btn-voteup, .btn-votedown').live('click',function(e) {
+    var q = $(this);
+    var post = q.closest('.post');
     var url = $(this).attr('href') + '.json';
     $.ajax({
       type: 'POST',
       url: url,
       data: '',
-      success: voteSuccess
+      success: function(data, status, jqxhr) {
+        var post_id = post.attr('rel');
+        if ( post_id > 0 ) {
+          $(".post[rel="+post_id+"]").find('.btn-voteup span').text(data.plus);
+          $(".post[rel="+post_id+"]").find('.btn-votedown span').text(data.minus);
+          if ( data.voted === true ) {
+            post.find('.btn-voteup').removeClass('active');
+            post.find('.btn-votedown').removeClass('active');
+            q.closest('.btn').addClass('active');
+          }
+        }
+      }
     });
     e.preventDefault();
   });
