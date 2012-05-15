@@ -8,12 +8,12 @@ a.brand { font-family: Satisfy; }
 h3.gravatar { border-bottom: 1px solid #fff; padding: 5px; font-size: 14px; }
 h3.gravatar img { border: 5px solid #fff; border-radius: 5px; width: 40px; height: 40px; }
 .post > p { text-align: justify; }
-.postslist .post, .lastposts .post { box-shadow: 0 0 5px #888; margin-bottom: 10px; }
-.postslist .post > p, .lastposts .post > p { height: 125px; padding: 5px; }
+/*.postslist .post, .lastposts .post { box-shadow: 0 0 5px #888; margin-bottom: 10px; }*/
+.postslist .post > p, .lastposts .post > p { height: 125px; padding: 5px; overflow: hidden; }
 .cg-buttons { padding: 5px; }
 #chi-siamo .logo { width: 200px; float: left; }
 #chi-siamo .info { width: 600px; float: right; }
-#chi-siamo p { text-align: justify; }
+#chi-siamo p, #privacy p { text-align: justify; }
 footer { color: #fff; padding-top: 10px }
 footer .pull-left { padding-top: 5px; width: 820px; }
 footer .pull-right { width: 110px; }

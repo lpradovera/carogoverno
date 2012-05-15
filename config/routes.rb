@@ -7,6 +7,7 @@ Carogoverno::Application.routes.draw do
   #match "posts/new" => "posts#new", :via => :get
   #match "posts/detail/:id" => "posts#detail", :via => :get
   match "chi-siamo" => "home#chisiamo", :via => :get
+  match "privacy" => "home#privacy", :via => :get
 
   devise_for :users
 

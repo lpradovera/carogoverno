@@ -26,7 +26,7 @@ $(function() {
     e.preventDefault();
     var href = $(e.target).attr('href');
     var title = $(e.target).attr('title');
-    if ( title == 'undefined' ) {
+    if ( title === undefined ) {
       title = "Dettaglio Proposta";
     }
     if (href.indexOf('#') == 0) {

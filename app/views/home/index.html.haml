@@ -17,22 +17,21 @@
           = render :partial => "shared/postbuttons", :object => p
 %section.container.lastposts
   .row-fluid
-    .well
-      .clearfix
-        .page-header
-          %h1.carogoverno
-            Ultime Proposte
-            %small
-              Le ultime proposte inserite
-        - @last_posts.each_with_index do |p, i|
-          - if i % 4 == 0
-            </div>
-            <div class="clearfix">
-          .span3.post
-            %h3.gravatar
-              %img{src: p.user.gravatar_path, title: p.user.name}
-              = p.user.name
-            %p
-              = truncate(p.body, :length => 200)
-              = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'
-            = render :partial => "shared/postbuttons", :object => p
+    .clearfix
+      .page-header
+        %h1.carogoverno
+          Ultime Proposte
+          %small
+            Le ultime proposte inserite
+      - @last_posts.each_with_index do |p, i|
+        - if i % 4 == 0
+          </div>
+          <div class="clearfix">
+        .span3.post.well
+          %h3.gravatar
+            %img{src: p.user.gravatar_path, title: p.user.name}
+            = p.user.name
+          %p
+            = truncate(p.body, :length => 175)
+            = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'
+          = render :partial => "shared/postbuttons", :object => p

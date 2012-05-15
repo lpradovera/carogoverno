@@ -6,4 +6,7 @@ class HomeController < ApplicationController
 
   def chisiamo
   end
+
+  def privacy
+  end
 end
