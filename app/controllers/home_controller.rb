@@ -9,4 +9,13 @@ class HomeController < ApplicationController
 
   def privacy
   end
+
+  def team
+  end
+
+  def condizioni
+  end
+
+  def aiutaci
+  end
 end

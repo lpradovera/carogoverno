@@ -7,7 +7,7 @@
   .row
     - @top_posts.each do |p|
       .span4
-        .well.post
+        .well.post{rel: p.id}
           %h3.gravatar
             %img{src: p.user.gravatar_path, title: p.user.name}
             = p.user.name
@@ -27,7 +27,7 @@
         - if i % 4 == 0
           </div>
           <div class="clearfix">
-        .span3.post.well
+        .span3.post.well{rel: p.id}
           %h3.gravatar
             %img{src: p.user.gravatar_path, title: p.user.name}
             = p.user.name

@@ -54,8 +54,8 @@ class PostsController < ApplicationController
 
   def voteup
     @post = Post.find_by_id!(params[:id])
-    @post.add_vote(1,current_user.id)
-    @response = {plus: @post.plus, minus: @post.minus}
+    @voted = @post.add_vote(1,current_user.id)
+    @response = {plus: @post.plus, minus: @post.minus, voted: @voted}
     respond_to do |format|
       format.html
       format.json { render json: @response }
@@ -64,8 +64,8 @@ class PostsController < ApplicationController
 
   def votedown
     @post = Post.find_by_id!(params[:id])
-    @post.add_vote(-1,current_user.id)
-    @response = {plus: @post.plus, minus: @post.minus}
+    @voted = @post.add_vote(-1,current_user.id)
+    @response = {plus: @post.plus, minus: @post.minus, voted: @voted}
     respond_to do |format|
       format.html
       format.json { render json: @response }
