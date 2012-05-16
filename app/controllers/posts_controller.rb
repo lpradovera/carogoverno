@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @sort = params[:sort] || 'score'
-    per_page = 4
+    per_page = 12
     if @sort == 'score'
       @posts = Post.paginate(:page => params[:page], :per_page => per_page).order_by_score('DESC').all
     else

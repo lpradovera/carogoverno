@@ -1,6 +1,7 @@
-= simple_form_for @post do |f|
-  = f.error_notification
-  .inputs
-    = f.input :body
-  .actions
-    = f.button :submit, "Invia"
+.form-vertical
+  = simple_form_for @post do |f|
+    = f.error_notification
+    .inputs
+      = f.input :body, :input_html => { :cols => 75, :rows => 10 }, :class => "input-xlarge"
+    .actions
+      = f.button :submit, "Invia", :class => "btn-primary"
