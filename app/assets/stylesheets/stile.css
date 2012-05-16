@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Satisfy);
+body { margin: 75px 0 40px 0; }
+.carogoverno { font-family: Satisfy; }
+.navbar .nav > li > a { height: 29px; padding-top: 18px; }
+.navbar .btn-group { padding-top: 10px; }
+.navbar .btn { padding: 10px; }
+a.brand { font-family: Satisfy; }
+.row .well  { overflow: auto; }
+h3.gravatar { border-bottom: 1px solid #fff; padding: 5px; font-size: 14px; }
+h3.gravatar img { border: 5px solid #fff; border-radius: 5px; width: 40px; height: 40px; }
+.post > p { text-align: justify; }
+/*.postslist .post, .lastposts .post { box-shadow: 0 0 5px #888; margin-bottom: 10px; }*/
+.top3 .post > p { height: 95px; overflow: hidden; }
+.postslist .post > p, .lastposts .post > p { height: 125px; padding: 5px; overflow: hidden; }
+.cg-buttons { padding: 5px; }
+#chi-siamo .logo { width: 200px; float: left; }
+#chi-siamo .info { width: 600px; float: right; }
+#chi-siamo p, #privacy p { text-align: justify; }
+footer { color: #fff; padding-top: 10px }
+footer .pull-left { padding-top: 5px; width: 820px; }
+footer .pull-right { width: 110px; }
+.modal { display: none; }

@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :body, :posted_at, :user_id
 
   scope :order_by_score, lambda {|direction| 
-    joins("LEFT JOIN votes ON votes.post_id = posts.id").group("votes.post_id").select("posts.*, sum(votes.vote) AS score").order("score #{direction}")
+    joins("LEFT JOIN votes ON votes.post_id = posts.id").group("posts.id").select("posts.*, sum(votes.vote) AS score").order("score #{direction}")
   }
 
   def plus
@@ -23,5 +23,17 @@ class Post < ActiveRecord::Base
 
   def user_can_vote_for(for_user_id)
     user_id != for_user_id && has_vote_from_user(for_user_id).nil?
+  end
+
+  def add_vote(vote, user_id)
+    if user_can_vote_for(user_id)
+      vote = Vote.new({
+        post_id: id,
+        user_id: user_id,
+        vote: vote > 0 ? 1 : -1
+      }).save
+      return true
+    end
+    return false
   end
 end

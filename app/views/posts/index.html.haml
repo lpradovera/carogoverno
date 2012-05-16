@@ -1,18 +1,21 @@
-%h1 Tutti i post
-- @posts.each do |p|
-  .post
-    %p= p.body
-    %p
-      Punteggio:
-      = p.score || "0"
-      Positivi:
-      = p.plus
-      Negativi
-      = p.minus
-    %p
-      = link_to "+1", voteup_post_path(p), :method => :post
-      = link_to "-1", votedown_post_path(p), :method => :post
-    %p
-      = p.has_vote_from_user(current_user.id)
-    %p
-      = p.user_can_vote_for(current_user.id)
+%section.container.postslist
+  .row
+    = will_paginate @posts, :params => {sort: @sort}
+  .row
+    Ordina 
+    = link_to "per punteggio", posts_path(:sort => 'score')
+    = link_to "per data", posts_path(:sort => 'posted')
+  .row-fluid
+    .clearfix
+      - @posts.each_with_index do |p, i|
+        - if i % 4 == 0
+          </div>
+          <div class="clearfix">
+        .span3.post.well{rel: p.id}
+          %h3.gravatar
+            %img{src: p.user.gravatar_path, title: p.user.name}
+            = p.user.name
+          %p
+            = truncate(p.body, :length => 175)
+            = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'
+          = render :partial => "shared/postbuttons", :object => p

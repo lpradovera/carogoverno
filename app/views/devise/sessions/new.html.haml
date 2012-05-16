@@ -1,9 +1,13 @@
-%h2 Sign in
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  .inputs
-    = f.input :email, :required => false, :autofocus => true
-    = f.input :password, :required => false
-    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-  .actions
-    = f.button :submit, "Sign in"
-= render :partial => "devise/shared/links"
+.offset2.span8
+  .row.well
+    .offset1.span6
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
+        %fieldset
+          %legend Accedi
+          .inputs
+            = f.input :email, :required => false, :autofocus => true, :placeholder => 'La tua email'
+            = f.input :password, :required => false, :placeholder => 'La tua password'
+            = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+          .actions
+            = f.button :submit, "Sign in", :class => "btn-primary"
+          = render :partial => "devise/shared/links"
