@@ -9,7 +9,6 @@ class PostsController < ApplicationController
     else
       @posts = Post.paginate(:page => params[:page], :per_page => per_page).order('posted_at DESC').all
     end
-
     
     respond_to do |format|
       format.html

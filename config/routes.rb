@@ -10,7 +10,6 @@ Carogoverno::Application.routes.draw do
   match "privacy" => "home#privacy", :via => :get
   match "il-team" => "home#team", :via => :get
   match "condizioni-utilizzo" => "home#condizioni", :via => :get
-  match "aiutaci" => "home#aiutaci", :via => :get
 
   devise_for :users
 

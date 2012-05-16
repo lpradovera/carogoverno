@@ -8,16 +8,16 @@ ToDo List
 *Da Fare
 - In chi siamo aggiungere lo staff
 - Stilare la modalbox della nuova proposta, bottone messo in alto a destra vicino al profilo
-- Paginazione sulla pagina dei post
+V Paginazione sulla pagina dei post
 - Pagina post ordinati per score
 - Tasti social su post capire come fare a passare l'url se no non li mettiamo
 - Stilare form login
 - Stilare form registrazione/modifica utente
-- Aggiungere campo nome in fase di registrazione,in modifica profilo lo toglierei
-- Quando si mette mi piace/non mi piace a un post aggiornare i numeri sui tasti
-- Pagina donazioni
-- Box news in alto con i tweet
-- Mettere il bottone schiacciato se già votato
+V Aggiungere campo nome in fase di registrazione,in modifica profilo lo toglierei
+V Quando si mette mi piace/non mi piace a un post aggiornare i numeri sui tasti
+X Pagina donazioni
+V Box news in alto con i tweet
+V Mettere il bottone schiacciato se già votato
 *Da Valutare
 - "Le mie proposte" che abbiamo messo nel profilo che ne facciamo?
 - Ricaricare in ajax le proposte ogni X secondi in home page

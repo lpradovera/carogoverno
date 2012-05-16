@@ -15,7 +15,4 @@ class HomeController < ApplicationController
 
   def condizioni
   end
-
-  def aiutaci
-  end
 end

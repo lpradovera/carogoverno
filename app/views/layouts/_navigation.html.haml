@@ -6,8 +6,6 @@
   %li
     = link_to('Proposte', '/posts')
   %li
-    = link_to('Più Votati ', '#')
-  %li
     = link_to('Chi siamo', '/chi-siamo')
   %li
     = link_to('Il Team', '/il-team')
@@ -15,8 +13,6 @@
     = link_to('Privacy', '/privacy')
   %li
     = link_to('Condizioni', '/condizioni-utilizzo')
-  %li
-    = link_to('Aiutaci', '/aiutaci')
 - if user_signed_in?
   .btn-group.pull-right
     %a.btn.btn-primary.detail{href: new_post_path, title: 'Nuova Proposta'}  
