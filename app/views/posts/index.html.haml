@@ -1,6 +1,6 @@
 %section.container.postslist
   .row
-    = will_paginate @posts, :params => {sort: @sort}
+    = will_paginate @posts, :params => {sort: @sort}, :renderer => BootstrapPagination::Rails
   .row
     Ordina 
     = link_to "per punteggio", posts_path(:sort => 'score')

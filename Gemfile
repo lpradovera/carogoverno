@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem "devise", ">= 2.1.0.rc"
 gem "devise_invitable", ">= 1.0.1"
 gem "will_paginate", ">= 3.0.3"
+gem 'will_paginate-bootstrap'
 gem "therubyracer", :group => :assets, :platform => :ruby
 gem "haml", ">= 3.1.4"
 gem "haml-rails", ">= 0.3.4", :group => :development
