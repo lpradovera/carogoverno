@@ -1,5 +1,7 @@
 %section.container.postslist
   .row
+    = will_paginate @posts, :params => {sort: @sort}, :renderer => BootstrapPagination::Rails
+  .row
     Ordina 
     = link_to "per punteggio", posts_path(:sort => 'score')
     = link_to "per data", posts_path(:sort => 'posted')
@@ -17,5 +19,3 @@
             = truncate(p.body, :length => 175)
             = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'
           = render :partial => "shared/postbuttons", :object => p
-  .row
-    = will_paginate @posts, :params => {sort: @sort}, :renderer => BootstrapPagination::Rails, :previous_label => '&laquo;', :next_label => '&raquo;'
