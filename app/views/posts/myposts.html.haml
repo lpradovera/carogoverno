@@ -3,17 +3,7 @@
     %h1.carogoverno
       Le mie Proposte
       %small
-        = @sort == 'score' ? 'in base ai voti da voi dati!' : 'in ordine cronologico dalla più recente di oggi!'
-  .row-fluid.container
-    %ul.breadcrumb
-      %li
-        Ordina per: 
-      %li
-        = link_to "punteggio", posts_path(:sort => 'score'), { :class => @sort == 'score' ? 'active' : '' }
-      %li
-        %span.divider /
-      %li
-        = link_to "data", posts_path(:sort => 'posted'), { :class => @sort == 'posted' ? 'active' : '' }
+        Rivedi le proposte da te inviate
   .row-fluid
     .clearfix
       - @posts.each_with_index do |p, i|
