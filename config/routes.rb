@@ -11,6 +11,8 @@ Carogoverno::Application.routes.draw do
   match "il-team" => "home#team", :via => :get
   match "condizioni-utilizzo" => "home#condizioni", :via => :get
 
+  match "i-miei-post" => "posts#myposts", :via => :get
+
   devise_for :users
 
   resources :posts, :only => [:index, :show, :new, :create] do

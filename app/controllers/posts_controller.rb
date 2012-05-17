@@ -83,4 +83,9 @@ class PostsController < ApplicationController
       format.json { render json: :ok }
     end
   end
+
+  def myposts
+    per_page = 12
+    @posts = current_user.posts.paginate(:page => params[:page], :per_page => per_page).order("posted_at ASC").all
+  end
 end
