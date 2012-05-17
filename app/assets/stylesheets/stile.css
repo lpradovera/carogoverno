@@ -13,9 +13,12 @@ h3.gravatar img { border: 5px solid #fff; border-radius: 5px; width: 40px; heigh
 .top3 .post > p { height: 95px; overflow: hidden; }
 .postslist .post > p, .lastposts .post > p { height: 125px; padding: 5px; overflow: hidden; }
 .cg-buttons { padding: 5px; }
+#new_post textarea.input-xlarge { width: 500px; }
 #chi-siamo .logo { width: 200px; float: left; }
 #chi-siamo .info { width: 600px; float: right; }
 #chi-siamo p, #privacy p { text-align: justify; }
+#team .mates img { border: 5px solid #fff; border-radius: 5px; }
+#team p { text-align: justify; }
 footer { color: #fff; padding-top: 10px }
 footer .pull-left { padding-top: 5px; width: 820px; }
 footer .pull-right { width: 110px; }

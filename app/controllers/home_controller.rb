@@ -15,4 +15,8 @@ class HomeController < ApplicationController
 
   def condizioni
   end
+
+  def aiutaci
+    render :layout => false
+  end
 end
