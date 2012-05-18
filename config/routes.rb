@@ -8,7 +8,7 @@ Carogoverno::Application.routes.draw do
   #match "posts/detail/:id" => "posts#detail", :via => :get
   match "chi-siamo" => "home#chisiamo", :via => :get
   match "privacy" => "home#privacy", :via => :get
-  match "il-team" => "home#team", :via => :get
+  #match "il-team" => "home#team", :via => :get
   match "condizioni-utilizzo" => "home#condizioni", :via => :get
   match "aiutaci" => "home#aiutaci", :via => :get
 
