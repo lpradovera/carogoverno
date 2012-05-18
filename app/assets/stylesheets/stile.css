@@ -21,6 +21,8 @@ h3.gravatar img { border: 5px solid #fff; border-radius: 5px; width: 40px; heigh
 #team .mates img { border: 5px solid #fff; border-radius: 5px; }
 #team p { text-align: justify; }
 footer { color: #fff; padding-top: 10px }
+footer .carogoverno { font-size: 1.2em; }
+footer a { color: #fff; }
 footer .pull-left { padding-top: 5px; width: 820px; }
 footer .pull-right { width: 110px; }
 .modal { display: none; }

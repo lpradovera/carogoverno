@@ -8,13 +8,13 @@
   %li
     = link_to('Chi siamo', '/chi-siamo')
   %li
-    = link_to('Il Team', '/il-team')
-  %li
     = link_to('Privacy', '/privacy')
   %li
     = link_to('Condizioni', '/condizioni-utilizzo')
 .btn-group.pull-left.aiutaci
-  %a.btn.btn.detail{:href => '/aiutaci', :title => 'Aiutaci'} Aiutaci
+  %a.btn.btn.detail{:href => '/aiutaci', :title => 'Aiutaci'} 
+    %i.icon-globe
+    Aiutaci
 - if user_signed_in?
   .btn-group.pull-right
     %a.btn.btn-primary.detail{href: new_post_path, title: 'Nuova Proposta'}  
@@ -35,3 +35,4 @@
 - else
   .btn-group.pull-right
     = link_to('Accedi', new_user_session_path, :class => 'btn btn-primary')
+    -#= link_to('Registrati', '/users/sign_up', :class => 'btn btn-primary')

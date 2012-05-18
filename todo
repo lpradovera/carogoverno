@@ -7,15 +7,15 @@ X = Da non fare
 ? = Da valutare
 O = Parzialmente fatto
 **********************************
-O Scrivere le Condizioni di utilizzo
-O Fare Pagina Il Team
+V Scrivere le Condizioni di utilizzo
+X Fare Pagina Il Team
 V Stilare la modalbox della nuova proposta
 V Paginazione sulla pagina dei post
 X Pagina post ordinati per score (integrata con l'altra)
 X Tasti social su post capire come fare a passare l'url se no non li mettiamo
 - Stilare form login
 - Stilare form registrazione/modifica utente
-- In fase di registrazione aggiungere accettazione condizioni e privacy con relativi link alle pagine
+V In fase di registrazione aggiungere accettazione condizioni e privacy con relativi link alle pagine
 V Aggiungere campo nome in fase di registrazione,in modifica profilo lo toglierei
 V Quando si mette mi piace/non mi piace a un post aggiornare i numeri sui tasti
 V Pagina donazioni
@@ -24,6 +24,8 @@ V Mettere il bottone schiacciato se già votato
 V "Le mie proposte"
 - Mettere tutto in italiano --IMPORTANTE--
 V Paypal
+V Google Analytics
+ 
 
 ? Ricaricare in ajax le proposte ogni X secondi in home page
 ? Poter togliere il voto
