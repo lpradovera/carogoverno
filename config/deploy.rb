@@ -11,7 +11,7 @@ set :use_sudo, false
 set :application, "carogoverno"
 set :scm, :git
 set :repository, "git://github.com/polysics/carogoverno.git"
-set :branch, 'master'
+set :branch, 'develop'
 set :git_shallow_clone, 1
 set :scm_verbose, true
 
