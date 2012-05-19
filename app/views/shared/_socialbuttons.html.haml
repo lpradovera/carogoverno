@@ -1,0 +1,8 @@
+.clearfix.social
+  .facebook.pull-left
+    .fb-like{:'data-href' => "http://www.carogoverno.it/posts/#{socialbuttons.id}", :'data-send' => "false", :'data-layout' => "button_count", :'data-width' => "25", :'data-show-faces' => "false", :'data-action' => "recommend"}
+  .twitter.pull-left
+    %a.twitter-share-button{:href => "https://twitter.com/share", :'data-url' => "http://www.carogoverno.it/posts/#{socialbuttons.id}", :'data-via' => "CaroGoverno", :'data-lang' => "it"} Tweet
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  .google.pull-left
+    .g-plusone{:'data-href' => "http://www.carogoverno.it/posts/#{socialbuttons.id}", :'data-size' => "medium"}
