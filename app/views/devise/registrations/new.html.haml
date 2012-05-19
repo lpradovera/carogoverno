@@ -13,5 +13,5 @@
           = f.input :terms_of_service, :as => :boolean, :label => "Accetti le #{link_to "condizioni del servizio", "/condizioni-utilizzo", :target => "_new"}?".html_safe
           = f.input :privacy_terms, :as => :boolean, :label => "Accetti le #{link_to "condizioni della privacy", "/privacy", :target => "_new"}?".html_safe
         .actions
-          = f.button :submit, "Registrati"
+          = f.button :submit, "Registrati", :class => "btn-primary"
       = render :partial => "devise/shared/links"
