@@ -40,3 +40,8 @@ end
 gem "guard-bundler", ">= 0.1.3", :group => :development
 gem "guard-rails", ">= 0.0.3", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
+group :development do
+  gem 'capistrano'
+  gem 'rvm'
+  gem 'rvm-capistrano'
+end
