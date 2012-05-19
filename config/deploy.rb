@@ -11,7 +11,7 @@ set :use_sudo, false
 set :application, "carogoverno"
 set :scm, :git
 set :repository, "git://github.com/polysics/carogoverno.git"
-set :branch, 'master'
+set :branch, 'develop'
 set :git_shallow_clone, 1
 set :scm_verbose, true
 
@@ -36,3 +36,13 @@ namespace :deploy do
    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
  end
 end
+
+after 'deploy:update_code', 'deploy:symlink_shared'
+
+namespace :deploy do
+  desc "Symlinks the shared files as needed"
+  task :symlink_db, :roles => :app do
+    run "ln -nfs #{deploy_to}/shared/config/email.yml #{release_path}/config/email.yml"
+  end
+end
+
