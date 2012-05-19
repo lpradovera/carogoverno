@@ -24,19 +24,11 @@ gem "email_spec", ">= 1.2.1", :group => :test
 gem "sass", ">= 3.1.12"
 gem "simple_form"
 gem "capybara", :group => [:development, :test]
-gem "guard", ">= 0.6.2", :group => :development  
-case HOST_OS
-  when /darwin/i
-    gem 'rb-fsevent', :group => :development
-    gem 'growl', :group => :development
-  when /linux/i
-    gem 'libnotify', :group => :development
-    gem 'rb-inotify', :group => :development
-  when /mswin|windows/i
-    gem 'rb-fchange', :group => :development
-    gem 'win32console', :group => :development
-    gem 'rb-notifu', :group => :development
-end
 gem "guard-bundler", ">= 0.1.3", :group => :development
 gem "guard-rails", ">= 0.0.3", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
+group :development do
+  gem 'capistrano'
+  gem 'rvm'
+  gem 'rvm-capistrano'
+end
