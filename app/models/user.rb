@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_acceptance_of :terms_of_service, :on => :create
   validates_acceptance_of :privacy_terms, :on => :create
-  # attr_accessible :title, :body
+
+  before_destroy { |record| Post.destroy_all "user_id = #{record.id}"   }
+  before_destroy { |record| Vote.destroy_all "user_id = #{record.id}" }
   
   def gravatar
     Digest::MD5.hexdigest(email)
