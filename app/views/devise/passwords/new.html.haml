@@ -3,10 +3,10 @@
     .offset1.span6
       %fieldset
         %legend Password Dimenticata?
-      = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-        = f.error_notification
-        .inputs
-          = f.input :email, :required => true
-        .actions
-          = f.button :submit, "Recupera password"
-      = render :partial => "devise/shared/links"
+        = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+          = f.error_notification
+          .inputs
+            = f.input :email, :required => true
+          .actions
+            = f.button :submit, "Recupera password"
+        = render :partial => "devise/shared/links"

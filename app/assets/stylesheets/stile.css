@@ -5,7 +5,6 @@ body { margin: 75px 0 40px 0; }
 .navbar .btn-group { padding-top: 10px; }
 .navbar .btn { padding: 10px; }
 a.brand { font-family: Satisfy; }
-.row .well  { overflow: auto; }
 .aiutaci { margin-left: 55px !important; }
 h3.gravatar { border-bottom: 1px solid #fff; padding: 5px; font-size: 14px; }
 h3.gravatar img { border: 5px solid #fff; border-radius: 5px; width: 40px; height: 40px; }
@@ -28,3 +27,5 @@ footer .pull-right { width: 110px; }
 .modal { display: none; }
 .breadcrumb a.active { font-weight: bold; }
 blockquote { padding: 0 0 0 15px; margin: 0 0 18px; border-left: 5px solid #EEE; }
+.twitter, .google { width: 77px !important; }
+.facebook { width: 100px !important; }

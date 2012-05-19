@@ -1,5 +1,7 @@
+= render :partial => "shared/socialinit"
 .post{rel: @post.id}
   %p
     = @post.body
     %hr
+    = render :partial => "shared/socialbuttons", :object => @post
     = render :partial => "shared/postbuttons", :object => @post

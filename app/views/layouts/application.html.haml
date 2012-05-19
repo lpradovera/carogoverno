@@ -7,7 +7,6 @@
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
     = stylesheet_link_tag "bootstrap.min", "stile"
-    -#= javascript_include_tag :application
     = javascript_include_tag "jquery-1.7.2.min", "bootstrap.min", "jquery_ujs", "posts"
     = csrf_meta_tags
     = yield(:head)
@@ -37,6 +36,7 @@
             %a.addthis_button_facebook{:title =>'Condividi CaroGoverno su Facebook', :rel => 'tooltip'}
             %a.addthis_button_twitter{:title =>'Pubblica CaroGoverno su Twitter', :rel => 'tooltip'}
             %a.addthis_button_email{:title =>'Invita i tuoi amici su CaroGoverno', :rel => 'tooltip'}
+            <script type="text/javascript">var addthis_config = {ui_language: "it"};</script>
             <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fafafcd73d9308e"></script>
 .modal
   .modal-header
