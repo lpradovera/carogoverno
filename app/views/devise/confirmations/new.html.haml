@@ -1,0 +1,12 @@
+.offset2.span8
+  .row.well
+    .offset1.span6
+      %fieldset
+        %legend Reinvio istruzioni di attivazione
+        = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+          = f.error_notification
+          .inputs
+            = f.input :email, :required => true
+          .actions
+            = f.button :submit, "Inviami le istruzioni"
+        = render :partial => "devise/shared/links"

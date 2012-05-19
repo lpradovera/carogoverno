@@ -1,21 +1,17 @@
-%h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  %p
-    = f.label :name
-    %br/
-    = f.text_field :name
-  %p
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %p
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %p
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %p= f.submit "Sign up"
-= render "links"
+.offset2.span8
+  .row.well
+    .offset1.span6
+      %fieldset
+        %legend Registrati
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
+        = f.error_notification
+        .inputs
+          = f.input :name, :required => true, :autofocus => true, :input_html => {:maxlength => 15}, :label => "Nickname"
+          = f.input :email, :required => true, :hint => "Usata per il login"
+          = f.input :password, :required => true
+          = f.input :password_confirmation, :required => true, :label => "Conferma password"
+          = f.input :terms_of_service, :as => :boolean, :label => "Accetti le #{link_to "condizioni del servizio", "/condizioni-utilizzo", :target => "_new"}?".html_safe
+          = f.input :privacy_terms, :as => :boolean, :label => "Accetti le #{link_to "condizioni della privacy", "/privacy", :target => "_new"}?".html_safe
+        .actions
+          = f.button :submit, "Registrati"
+      = render :partial => "devise/shared/links"

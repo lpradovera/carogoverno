@@ -1,0 +1,10 @@
+it:
+  devise:
+    invitations:
+      send_instructions: 'Email di invito inviata a %{email}.'
+      invitation_token_invalid: 'Il codice di invito non risulta valido!'
+      updated: 'Passowrd assegnata correttamente. Si prega di eseguire il login.'
+      no_invitations_remaining: "Non ci sono inviti rimanenti."
+    mailer:
+      invitation_instructions:
+        subject: 'Istruzioni per invito'

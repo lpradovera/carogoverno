@@ -1,0 +1,7 @@
+%p
+  #{@resource.name}, benvenuto da Carogoverno.it
+%p Ti preghiamo di confermare il tuo account cliccando sul link sottostante:
+%p= link_to 'Conferma iscrizione a Carogoverno.it', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+
+%p Ti ringraziamo e aspettiamo le tue buone idee!
+%p Staff Carogoverno.it

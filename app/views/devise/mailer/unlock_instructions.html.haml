@@ -1,0 +1,5 @@
+%p
+  Ciao, #{@resource.name}!
+%p Il tuo account Carogoverno.it è stato bloccato a causa dei ripetuti tentativi di accesso.
+%p Clicca sul link seguente per sbloccarlo:
+%p= link_to 'Sblocca il mio account', unlock_url(@resource, :unlock_token => @resource.unlock_token)

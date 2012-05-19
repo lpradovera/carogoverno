@@ -1,14 +1,38 @@
-= link_to "Carogoverno", root_path, :class => 'brand'
+-#= link_to "Carogoverno", root_path, :class => 'brand'
+%a.brand(title='Caro Governo' href=root_path)
+  %img(src='/img/logo.png' alt='Caro Governo')
+  Caro Governo
 %ul.nav
-  - if user_signed_in?
-    %li
-      = link_to('Logout', destroy_user_session_path, :method=>'delete')
-  - else
-    %li
-      = link_to('Login', new_user_session_path)
-  - if user_signed_in?
-    %li
-      = link_to('Edit account', edit_user_registration_path)
-  - else
-    %li
-      = link_to('Sign up', new_user_registration_path)
+  %li
+    = link_to('Proposte', '/posts')
+  %li
+    = link_to('Chi siamo', '/chi-siamo')
+  %li
+    = link_to('Privacy', '/privacy')
+  %li
+    = link_to('Condizioni', '/condizioni-utilizzo')
+.btn-group.pull-left.aiutaci
+  %a.btn.btn.detail{:href => '/aiutaci', :title => 'Aiutaci'} 
+    %i.icon-globe
+    Aiutaci
+- if user_signed_in?
+  .btn-group.pull-right
+    %a.btn.btn-primary.detail{href: new_post_path, title: 'Nuova Proposta'}  
+      %i.icon-leaf
+      &nbsp;Proponi
+    %a.btn.btn-primary.dropdown-toggle(href='#' data-toggle='dropdown')
+      %i.icon-user
+      = current_user.name
+      %span.caret
+    %ul.dropdown-menu
+      %li
+        = link_to('Il Mio Profilo', edit_user_registration_path)
+      %li
+        = link_to('Le Mie Proposte', '/i-miei-post')
+      %li.divider
+      %li
+        = link_to('Esci', destroy_user_session_path, :method => 'delete')
+- else
+  .btn-group.pull-right
+    = link_to('Accedi', new_user_session_path, :class => 'btn btn-primary')
+    -#= link_to('Registrati', '/users/sign_up', :class => 'btn btn-primary')

@@ -1,0 +1,32 @@
+%section.container.postslist
+  .page-header
+    %h1.carogoverno
+      Elenco Proposte
+      %small
+        = @sort == 'score' ? 'in base ai voti da voi dati!' : 'in ordine cronologico dalla più recente di oggi!'
+  .row-fluid.container
+    %ul.breadcrumb
+      %li
+        Ordina per: 
+      %li
+        = link_to "punteggio", posts_path(:sort => 'score'), { :class => @sort == 'score' ? 'active' : '' }
+      %li
+        %span.divider /
+      %li
+        = link_to "data", posts_path(:sort => 'posted'), { :class => @sort == 'posted' ? 'active' : '' }
+  .row-fluid
+    .clearfix
+      - @posts.each_with_index do |p, i|
+        - if i % 4 == 0
+          </div>
+          <div class="clearfix">
+        .span3.post.well{rel: p.id}
+          %h3.gravatar
+            %img{src: p.user.gravatar_path, title: p.user.name}
+            = p.user.name
+          %p
+            = truncate(p.body, :length => 175)
+            = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'
+          = render :partial => "shared/postbuttons", :object => p
+  .row-fluid
+    = will_paginate @posts, :params => {sort: @sort}, :renderer => BootstrapPagination::Rails, :class => 'container pagination', :next_label => '&raquo;', :previous_label => '&laquo;'

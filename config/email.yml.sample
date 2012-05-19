@@ -4,11 +4,11 @@ development:
   :authentication: plain
   :user_name: mailer@carogoverno.it
   :password: PASSWORD
-  :enable_starttls_auto: true
+  :enable_starttls_auto: false
 production:
   :address: mail.carogoverno.it
   :port: 587 
   :authentication: plain
   :user_name: mailer@carogoverno.it
   :password: PASSWORD
-  :enable_starttls_auto: true
+  :enable_starttls_auto: false

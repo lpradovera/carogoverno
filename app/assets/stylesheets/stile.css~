@@ -1,0 +1,6 @@
+body { margin: 75px 0 0 0; }
+.navbar .nav > li > a { height: 29px; padding-top: 15px; }
+.navbar .btn-group { padding-top: 12px; }
+.row .well  { overflow: auto; }
+h3.gravatar { border-bottom: 1px solid #fff; }
+h3.gravatar img { border: 5px solid #fff; border-radius: 5px; width: 40px; height: 40px; }
