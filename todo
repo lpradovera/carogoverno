@@ -22,9 +22,10 @@ V Pagina donazioni
 V Box news in alto con i tweet
 V Mettere il bottone schiacciato se già votato
 V "Le mie proposte"
-- Mettere tutto in italiano --IMPORTANTE--
+- Mettere tutto in italiano --CONTROLLARE vari form e email--
 V Paypal
 V Google Analytics
+- Se un utente si elimina ranzare tutto
  
 
 ? Ricaricare in ajax le proposte ogni X secondi in home page

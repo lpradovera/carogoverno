@@ -1,8 +1,12 @@
-%h2 Hai dimenticato la password?
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-  = f.error_notification
-  .inputs
-    = f.input :email, :required => true
-  .actions
-    = f.button :submit, "Recupera password"
-= render :partial => "devise/shared/links"
+.offset2.span8
+  .row.well
+    .offset1.span6
+      %fieldset
+        %legend Password Dimenticata?
+      = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+        = f.error_notification
+        .inputs
+          = f.input :email, :required => true
+        .actions
+          = f.button :submit, "Recupera password"
+      = render :partial => "devise/shared/links"
