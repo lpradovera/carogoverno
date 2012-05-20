@@ -50,6 +50,7 @@ $(function() {
         modal += '<div class="modal-body"><p>'+data+'</p></div>';
         modal += '<div class="modal-footer"> <a href="#" class="btn" data-dismiss="modal">Chiudi</a></div>';
         $(modal).modal();
+        setTimeout(parseSocial, 100);
       });
     }
   });
@@ -93,3 +94,7 @@ function linkify(string){
       );  
   return string;  
 }  
+function parseSocial()
+{
+    gapi.plusone.go();
+}
