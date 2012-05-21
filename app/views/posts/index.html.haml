@@ -25,7 +25,7 @@
             %img{src: p.user.gravatar_path, title: p.user.name}
             = p.user.name
           %p
-            = truncate(p.body, :length => 175)
+            = truncate(p.body, :length => POST_TRUNCATE)
             = link_to 'Leggi >>', post_path(p), :class => 'detail', :rel => 'tooltip', :title => 'Leggi il dettaglio'
           = render :partial => "shared/postbuttons", :object => p
   .row-fluid

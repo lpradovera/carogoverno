@@ -1,5 +1,8 @@
 require File.expand_path('../boot', __FILE__)
 
+MAIN_TRUNCATE = 170
+POST_TRUNCATE = 150
+
 # Pick the frameworks you want:
 require "active_record/railtie"
 require "action_controller/railtie"
