@@ -6,6 +6,9 @@
     %title= content_for?(:title) ? yield(:title) : "Carogoverno"
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
+    %meta{:property => "og:image", :content => "http://www.carogoverno.it/img/logo200.png"}
+    %meta{:property => "og:site_name", :content => "CaroGoverno"}
+    %link{:rel => "image_src", :href => "http://www.carogoverno.it/img/logo200.png"}
     = stylesheet_link_tag "bootstrap.min", "stile"
     = javascript_include_tag "jquery-1.7.2.min", "bootstrap.min", "jquery_ujs", "posts"
     = csrf_meta_tags
